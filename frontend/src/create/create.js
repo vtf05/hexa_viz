@@ -1,64 +1,60 @@
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import React from 'react';
-import { Form } from 'react-bootstrap';
-import './create.css';
+import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import Sidenavbar from '../sidenavbar';
+
 function Create(props) {
     return (
-        <div>
-            <div class="panel deep-purple"></div>
-	<main class="freeBird">
-		<div class="container" >
-			<div class="row CreateLay"  >
-				<div class="col-md-7 m-x-auto pull-xs-none">
-					<div class="jumbotron">
-						<h2 class="h2-responsive"><strong>Create</strong></h2>
-						<div class="card-block">
-							<Form action="#">
-								<h5 class="h5-responsive">Title</h5>
-								<div class="md-form">
-									<input type="text" id="form1" class="form-control"/>
-									<label for="form1" class=""> </label>
-								</div>
-                <div class="md-form">
-                      <div>
-								<h5 class="h5-responsive">Subject</h5>
-								<div class="md-form">
-									<i class="fa fa-user prefix"></i>
-									<input type="text" id="form2" class="form-control"/>
-									<label for="form2"></label>
-								</div>
-
-							
-								<h5 class="h5-responsive">Description</h5>
-								<div class="md-form">
-									<i class="fa fa-envelope prefix"></i>
-									<input type="email" id="form9" class="form-control validate md-textarea"/>
-									
-								</div>
-                                
-                                <label class="file">
-                                 <input type="file" id="file" aria-label="File browser example"/>
-                                     <span class="file-custom"></span>
-                                </label>
-
-								<div class="text-xs-left">
-									<button class="btn btn-primary buttonCss">Submit</button>
-								</div>
-						</div>
-						
-
-					</div>
-				
-                </Form>
-			</div>
-            </div>
-		</div>
-        </div>
-        </div>
-	</main>
+        <>
+        <Row>
+        <Col md={2}>
+         <Sidenavbar />
+      </Col>
+            <Col>
+        <Container >
+            <Form.Label style={{fontSize:"50px", fontWeight:"100px", fontStyle:"bold"}}>CREATE</Form.Label>
+         <Card style={{padding:"15px", marginTop:"100px"}}>
+        <Form >
+           
+  
+  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+    <Form.Label>Document Title</Form.Label>
+    <Form.Control type="text" placeholder="" />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+    <Form.Label>Description</Form.Label>
+    <Form.Control type="text" placeholder="" />
+  </Form.Group>
+  <FormControl fullWidth>
+  <InputLabel id="demo-simple-select-label">Category</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    label="Category"
+  >
+    <MenuItem value={1}>Csfdghjklsfdghj!</MenuItem>
+    <MenuItem value={2}>C@</MenuItem>
+    <MenuItem value={3}>C#</MenuItem>
+  </Select>
+  </FormControl>
+  <Form.Group controlId="formFileMultiple" className="mb-3">
+    <Form.Label>Upload here</Form.Label>
+    <Form.Control type="file" multiple />
+  </Form.Group>
+  <Form.Group style={{textAlign:"center"}}>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+  </Form.Group>
+  </Form>
+  </Card>
 
 
-			
-        </div>
+            
+        </Container>
+        </Col>
+        </Row>
+        </>
     );
 }
 
