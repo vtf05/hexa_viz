@@ -6,7 +6,7 @@ import './App.css'
 function Sidenavbar(props) {
   return (
     <>
-      <Col md={2} className="sidenavbar" style={{ height: "100vh" }}>
+      <Col  className="sidenavbar" style={{ height: "100vh" }}>
         <Row>
           <Figure>
             <Figure.Image
