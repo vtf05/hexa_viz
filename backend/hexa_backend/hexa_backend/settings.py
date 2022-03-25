@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'file_mech',
     'security_mech',
     'replication_mech',
+    'rest_auth',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [

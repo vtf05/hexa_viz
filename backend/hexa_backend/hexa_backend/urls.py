@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/document/' ,include('file_mech.urls')),
+    path('rest-auth/',include('rest_auth.urls'))
 ]
 
 if settings.DEBUG:
