@@ -1,7 +1,9 @@
 from file_mech import views
-from rest_framework import DefaultRouter
-
+from rest_framework.routers import SimpleRouter 
 # create router object
-router=DefaultRouter()
+router = SimpleRouter()
 # register  CreateFileView with router
-router.register('api',views.CreateFileView,basename='set_router')
+router.register('',views.CreateFileView,)
+
+
+urlpatterns = router.urls

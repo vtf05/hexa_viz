@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import CreateFile
 
 
-from .serializers import FileSerializer
+from .serializers import CreateFileSerializer
 from rest_framework import viewsets
 
 
@@ -11,7 +11,7 @@ from rest_framework import viewsets
 class CreateFileView(viewsets.ModelViewSet):
        
         queryset=CreateFile.objects.all()
-        serializer_class=FileSerializer(queryset,many=True)
+        serializer_class=CreateFileSerializer
         
    
       

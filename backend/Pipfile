@@ -5,8 +5,9 @@ name = "pypi"
 
 [packages]
 django = "*"
-django-rest-framework = "*"
-
+psycopg2 = "*"
+psycopg2-binary = "*"
+djangorestframework = "==3.12.4"
 [dev-packages]
 
 [requires]
