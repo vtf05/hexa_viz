@@ -15,17 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from file_mech import views
-from rest_framework import DefaultRouter
+from django.conf import settings
+from django.conf.urls.static import static
 
-# create router object
-router=DefaultRouter()
-# register  CreateFileView with router
-router.register('api',views.CreateFileView,basename='set_router')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(router.surls))
+    path('api/v1/document/' ,include('file_mech.urls')),
+    path('rest-auth/',include('rest_auth.urls'))
 ]
 
 if settings.DEBUG:
