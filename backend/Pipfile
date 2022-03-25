@@ -8,6 +8,8 @@ django = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
 djangorestframework = "==3.12.4"
+django-filter = "*"
+
 [dev-packages]
 
 [requires]
