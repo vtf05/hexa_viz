@@ -8,9 +8,7 @@ import Dashboard from "./dashboard/dashboard";
 function App() {
   return (
     <Row className="App">
-      <Col md={2}>
-         <Sidenavbar />
-      </Col>
+      
       <Col>
     <Router>
       <Routes>

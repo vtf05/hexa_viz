@@ -2,7 +2,6 @@ import React from "react";
 import { Col, Figure, Row, Button, Stack } from "react-bootstrap";
 import profilePic from "./image/profilePic.jpg";
 import "./App.css";
-import { Link } from "react-router-dom";
 
 function Sidenavbar(props) {
   return (
@@ -35,6 +34,7 @@ function Sidenavbar(props) {
             variant="light"
             className="btns"
             style={{ marginTop: "20vh" }}
+            onClick={()=>{window.location.href="/create"}}
           >
             Create
           </Button>
