@@ -1,0 +1,35 @@
+.panel {
+    display:block;
+    height:278px;
+}
+
+.freeBird {
+    margin-top:-203px;
+}
+
+.small-text {
+    font-size:12px;
+}
+.CreateLay{
+    justify-content: center;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.body {
+  margin: 0;
+  font: 1rem/1.5 "PT Sans", Arial, sans-serif;
+  color: #5a5a5a;
+}
+.choosefile{
+    padding: 11px;
+    border: groove;
+    border-radius: 7px;
+}
+.buttonCss{
+    
+}
