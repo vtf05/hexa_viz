@@ -10,6 +10,7 @@ psycopg2-binary = "*"
 djangorestframework = "==3.12.4"
 django-filter = "*"
 django-rest-auth = "*"
+cryptography = "*"
 
 [dev-packages]
 

@@ -23,8 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('rest-auth/',include('rest_auth.urls')),
     path('api/v1/document/' ,include('file_mech.urls')),
-    path('api/v1/security/' ,include('security.urls')),
-    
+    path('api/v1/rep/' ,include('replication_mech.urls')),
+    # path('api/v1/sec/' ,include('security_mech.urls')),
+    path('api/v1/security/' ,include('security_mech.urls')),
+
 ]
 
 
