@@ -28,7 +28,7 @@ function Sidenavbar(props) {
           <Stack gap={4} style={{ marginTop: "100px" }}>
             <a href="/dashboard" className="tabs">Dashboard</a>
             <div className="tabs">Important</div>
-            <div className="tabs">Sent</div>
+            <a href="/sent" className="tabs">Sent</a>
           </Stack>
           <Button
             variant="light"

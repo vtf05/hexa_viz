@@ -20,6 +20,26 @@ import "./loginView.css";
 // Import Logo
 
 function Login(props) {
+
+  const {email,setEmail}=useState("");
+  const {pswd,setPswd}=useState("");
+
+  const login=async(e)=>{
+    e.preventDefault();
+    const res = await fetch('http://localhost:5000/alumniLogin', {
+               method : "POST",
+               headers : {
+                 "Content-Type" : "application/json"
+                 },
+                 body: JSON.stringify({
+                   email:email,
+                   password : pswd
+                   })
+               });
+               const data = res.json();
+  }
+
+
   return (
     <div class="login-outer-css">
       <Fragment>
@@ -57,6 +77,8 @@ function Login(props) {
                         fullWidth
                         variant="standard"
                         className="Input-field"
+                        value={email}
+                        onChange={(e)=>{setEmail(e.target)}}
                       />
                     </FormControl>
                   </div>
@@ -70,6 +92,8 @@ function Login(props) {
                         type="password"
                         autoComplete="current-password"
                         variant="standard"
+                        value={pswd}
+                        onChange={(e)=>{setPswd(e.target)}}
                       />
                     </FormControl>
                   </div>
@@ -79,6 +103,7 @@ function Login(props) {
                     color="primary"
                     className="btn-block"
                     id="login-button"
+                    onClick={login}
                   >
                     Login
                   </Button>

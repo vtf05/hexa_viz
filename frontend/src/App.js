@@ -4,6 +4,7 @@ import Create from "./create/create";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "./login/login";
 import Dashboard from "./dashboard/dashboard";
+import Sent from "./sent/sent";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' exact element={ <Login />} /> 
         <Route path='/create' exact element={<Create />} />
         <Route path='/dashboard' exact element={<Dashboard />} />
+        <Route path='/sent' exact element={<Sent />} />
       </Routes>   
     </Router>
     </Col>
