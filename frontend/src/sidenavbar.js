@@ -1,21 +1,24 @@
 import React from "react";
-import { Col, Figure, Row, Button, Stack } from "react-bootstrap";
+import { ButtonGroup, Col, Figure, Row, Button, Stack } from "react-bootstrap";
 import profilePic from "./image/profilePic.jpg";
-import "./App.css";
+import './App.css'
 
 function Sidenavbar(props) {
   return (
     <>
-      <Col className="sidenavbar" style={{ height: "100vh" }}>
+      <Col  className="sidenavbar" style={{ height: "100vh" }}>
         <Row>
-          <Figure style={{ borderRadius: "50%" }}>
+          <Figure>
             <Figure.Image
               width={171}
               height={180}
               alt="171x180"
+              style={{borderRadius:"50%"}}
               src={profilePic}
             />
-            <Figure.Caption>Company Name</Figure.Caption>
+            <Figure.Caption>
+              Company Name
+            </Figure.Caption>
           </Figure>
         </Row>
         <Row

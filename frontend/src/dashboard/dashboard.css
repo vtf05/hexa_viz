@@ -1,0 +1,86 @@
+    @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+    /* Bootstrap Icons */
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
+    .card-boarder{
+        /* background-color: #c7dbff!important;
+        padding: 29px;
+        margin-left: 2%; */
+      
+ font-family: inherit;
+ padding: 0.6em 1.3em;
+ font-weight: 900;
+ font-size: 18px;
+ border: 3px solid black;
+ border-radius: 17px;
+ box-shadow: 1.1em 1.1em;
+ background: rgb(105,155,200);
+background: -moz-radial-gradient(top left, ellipse cover, hsl(208, 50%, 48%) 0%, rgba(181,197,216,1) 57%);
+ background: -webkit-gradient(radial, top left, 0px, top left, 100%, color-stop(0%,rgba(105,155,200,1)), color-stop(57%,rgba(181,197,216,1)));
+ background: -webkit-radial-gradient(top left, ellipse cover, rgba(105,155,200,1) 0%,#dbe3ed);
+ background: -o-radial-gradient(top left, ellipse cover, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);
+ background: -ms-radial-gradient(top left, ellipse cover, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);
+ background: radial-gradient(ellipse at top left, rgba(105,155,200,1) 0%,rgba(181,197,216,1) 57%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#699bc8', endColorstr='#b5c5d8',GradientType=1 );
+    }
+    .All-document{
+        border-color: black;
+        border: outset;
+    }
+    .H-Document{
+text-align: center;
+padding: 16px;
+    }
+  
+    .rounded-circle {
+        border-radius: -37%!important;
+        background-color: #243b63!important;
+    }
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
