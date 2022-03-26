@@ -17,8 +17,15 @@ from rest_framework.decorators import action ,api_view
 
 
 def get_path(source,dest) :
-    path = []
+    dic = { (1,4) :[1,2,3,4],
+    (1,3) :[1,2,3,4],
+    (2,4) :[1,2,3,4],
+    }
+    path = dic[(1,4)]
+   
     return path
+
+
 class StatusView(viewsets.ModelViewSet):
         permission_classes = (IsAuthenticated,)
         queryset= Status.objects.all()
@@ -40,16 +47,32 @@ class StatusView(viewsets.ModelViewSet):
             partial = kwargs.pop('partial', False)
             instance = self.get_object()
             get_next_point = get_next_point(instance.id)
-            if request.data['update'] == 'confirm' :
-                data['departmentId'] = get_next_point
-                data['type_of'] = 1
+            path = send_doc.objects.get(id = instance.id).path
+            ind = path.index(insatance.departmentId)
+
+
+            if ind+1 == len(path) :
+                if request.data['update'] == 'confirm' :
+                    data['type_of'] = 1
+                else :
+                    data['type_of'] = 4
+                    
             else :
-                data['type_of'] = 4
+                if request.data['update'] == 'confirm' :
+                    data['departmentId'] = path[ind+1]
+                    data['type_of'] = 1
+
+                else :
+                    data['type_of'] = 4   
+
+
             serializer = self.get_serializer(instance, data=data, partial=True)
             serializer.is_valid(raise_exception=True)
             self.perform_update(serializer)
             return Response(serializer.data) 
                
+
+
 
         # this method will be called for geting live running status 
         @action(methods=['get'], detail=True , url_path='graphical_status', url_name='graphical_status')
@@ -68,6 +91,8 @@ class StatusView(viewsets.ModelViewSet):
                     dic[name] = "approved"
             serialize_data = PublicProfileSerializer(dic)
             return Response(serialize_data.data, status = status.HTTP_201_CREATED )   
+
+
 
 
 class sendDocView(viewsets.ModelViewSet):
