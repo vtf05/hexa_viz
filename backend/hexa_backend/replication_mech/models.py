@@ -8,6 +8,8 @@ class Department(models.Model):
     name = models.CharField (max_length=50 , blank = True)
     priority = models.IntegerField(default = 0)
 
+    def __str__(self):
+         return self.name
 
 class employee(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -16,30 +18,25 @@ class employee(models.Model):
 
 
 
-statuses = [
-        (1, 'sent'),
-        (2, 'in_review'),
-        (3, 'approved'),
-        (4 , 'rejected'),
-    ]
+# statuses = [
+#         (1, 'sent'),
+#         (2, 'in_review'),
+#         (3, 'approved'),
+#         (4 , 'rejected'),
+#     ]
 
 
 class Status(models.Model):
-    type_of = models.CharField(
-        max_length=2,
-        choices= statuses,
-        default=1,)
-    docId =   models.ForeignKey(CreateFile, on_delete=models.CASCADE , related_name="doc")
+    type_of = models.IntegerField(default = 1,null=True,blank = True)
+    docId   = models.ForeignKey(CreateFile, on_delete=models.CASCADE , related_name="doc")
     departmentId = models.ForeignKey( Department , on_delete=models.CASCADE,null=True,blank = True)
-
-
-
 
 
 class send_doc (models.Model):
     send_by = models.ForeignKey(Department, on_delete=models.CASCADE , related_name = "sender")
     reciever = models.ForeignKey(Department,on_delete = models.CASCADE , related_name = "reciever")
     status = models.ForeignKey(Status , on_delete=models.CASCADE)
+    docId =   models.ForeignKey(CreateFile, on_delete=models.CASCADE , related_name="docId" ,null = True , blank = True)
     path = ArrayField(
             models.IntegerField(blank=True),
             size=8,

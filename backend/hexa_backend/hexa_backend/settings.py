@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'hexa_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hexa_viz', 
+        'NAME': 'hexa_viz1', 
         'USER': 'postgres', 
         'PASSWORD': '05Avinash',
         'HOST': '127.0.0.1', 
