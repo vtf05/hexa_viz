@@ -106,7 +106,7 @@ function Sent(props) {
   };
   
   const steps = ['D1', 'D2', 'D3', 'D4'];
-  const status='yes';
+  const status='no';
 
   
 
@@ -128,10 +128,10 @@ function Sent(props) {
                 id="panel1bh-header"
               >
                 <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                  Document Title
+                  Admission Documents
                 </Typography>
                 <Typography sx={{ color: "text.secondary" }}>
-                  Description
+                  Verification
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -142,7 +142,7 @@ function Sent(props) {
                   activeStep={1}
                   connector={<ColorlibConnector />}
                 > 
-                  {steps.map((label) => (
+                  {/* {steps.map((label) => (
                     <Step key={label}>
                       <StepLabel StepIconComponent={ColorlibStepIcon}>
                         {label}
@@ -153,7 +153,44 @@ function Sent(props) {
                         </li>
                       </StepLabel>
                     </Step>
-                  ))}
+                  ))} */}
+                  <Step key='Student Section'>
+                      <StepLabel StepIconComponent={ColorlibStepIcon}>
+                      Student Section
+                        <li>
+                          <ul>InReview: yes</ul>
+                          <ul>Approved: yes</ul>
+                          <ul>Sent:yes</ul>
+                        </li>
+                      </StepLabel>
+                    </Step><Step key='Accounts Section '>
+                      <StepLabel StepIconComponent={ColorlibStepIcon}>
+                      Accounts Section 
+                        <li>
+                          <ul>InReview: yes</ul>
+                          <ul>Approved: not yet</ul>
+                          <ul>Sent:no</ul>
+                        </li>
+                      </StepLabel>
+                    </Step><Step key='Head of Department'>
+                      <StepLabel StepIconComponent={ColorlibStepIcon}>
+                      Head of Department
+                        <li>
+                          <ul>InReview: {status}</ul>
+                          <ul>Approved: {status}</ul>
+                          <ul>Sent:{status}</ul>
+                        </li>
+                      </StepLabel>
+                    </Step><Step key='CSVTU'>
+                      <StepLabel StepIconComponent={ColorlibStepIcon}>
+                        CSVTU
+                        <li>
+                          <ul>InReview: {status}</ul>
+                          <ul>Approved: {status}</ul>
+                          <ul>Sent:{status}</ul>
+                        </li>
+                      </StepLabel>
+                    </Step>
                 </Stepper>
                 </Stack>
               </AccordionDetails>

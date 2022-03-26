@@ -1,10 +1,25 @@
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
-import React from 'react';
-import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
-import Sidenavbar from '../sidenavbar';
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import React, { useState } from "react";
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import Sidenavbar from "../sidenavbar";
 import "./create.css";
 
 function Create(props) {
+  const [ doc, setDoc ] = useState("");
+  const [ desc, setDesc ] = useState("");
+  const [ cat, setCat ] = useState("");
+  const [uploadFile, setUploadFile] = useState();
+
+  const submitForm = (event) => {
+    event.preventDefault();
+
+    const dataArray = new FormData();
+    dataArray.append("uploadFile", uploadFile);
+
+  }
+
+    
+
   return (
     <>
       <Row>
@@ -52,12 +67,12 @@ function Create(props) {
                     <MenuItem value={3}>C#</MenuItem>
                   </Select>
                 </FormControl>
-                <Form.Group controlId="formFileMultiple" className="mb-3">
+                <Form.Group controlId="formFile" className="mb-3">
                   <Form.Label>Upload here</Form.Label>
-                  <Form.Control type="file" multiple />
+                  <Form.Control type="file" />
                 </Form.Group>
                 <Form.Group style={{ textAlign: "center" }}>
-                  <Button variant="primary" type="submit">
+                  <Button variant="primary" type="submit" onClick={submitForm}>
                     Submit
                   </Button>
                 </Form.Group>

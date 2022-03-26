@@ -26,8 +26,8 @@ function Login(props) {
 
   const login=async(e)=>{
     e.preventDefault();
-    const res = await fetch('http://localhost:5000/alumniLogin', {
-               method : "POST",
+    const res = await fetch('http://127.0.0.1:8000/api/v1/document/', {
+               method : "GET",
                headers : {
                  "Content-Type" : "application/json"
                  },
@@ -36,7 +36,7 @@ function Login(props) {
                    password : pswd
                    })
                });
-               const data = res.json();
+               const data = await res.json();
   }
 
 
