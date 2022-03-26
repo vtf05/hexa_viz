@@ -17,11 +17,13 @@ from rest_framework.decorators import action ,api_view
 
 
 def get_path(source,dest) :
-    dic = { (1,4) :[1,2,3,4],
+    dic = { 
+    (1,4) :[1,2,3,4],
     (1,3) :[1,2,3],
     (2,4) :[2,3,4],
+    (4,1) :[4,3,2,1],
     }
-    path = dic[(source,dest)]
+    path = dic[(int(source),int(dest))]
    
     return path
 
@@ -31,15 +33,15 @@ class StatusView(viewsets.ModelViewSet):
         queryset= Status.objects.all()
         serializer_class = StatusSerializer
 
-
         # it will be called for geting all the doc in pending review
         @action(methods=['get'], detail=True,url_path='pending', url_name='pending')
         def pending_review(self, request, pk=None,**kwargs):
+            print("great")
             departmentId = request.query_params['departmentId']
             status = Status.objects.filter(departmentId = departmentId)
             status.type = 2
             serializer_data  = self.get_serializer(status,many=True)
-            return Response(serialize_data.data)
+            return Response(serializer_data.data)
 
 
         # it will be called when document is forwarded or rejected by a person 
@@ -103,12 +105,14 @@ class sendDocView(viewsets.ModelViewSet):
 
         #  when a doc is sent then there will be some path  
         def create(self, request, *args, **kwargs):
-                data['send_by'] = request.data['sender']
-                data['reciever'] = request.data['receiver']
-                doc = CreateFile.object.get(request.data['docId'])
-                status  = Status.objects.create(docId = doc , departmentId = data['reciever'] )
-                data['status'] = status
-                data['path'] = get_path(request.data['sender'], request.data['receiver'])
+                data = {}
+                data['send_by'] = request.data['send_by']
+                data['reciever'] = request.data['reciever']
+                doc = CreateFile.objects.get(id = request.data['docId'])
+                department = Department.objects.get(id = data['reciever'])
+                statuss  = Status.objects.create(docId = doc , departmentId = department )
+                data['status'] = statuss.id
+                data['path'] = get_path(request.data['send_by'], request.data['reciever'])
                 serializer = self.get_serializer(data=data)
                 serializer.is_valid(raise_exception=True)
                 self.perform_create(serializer)
