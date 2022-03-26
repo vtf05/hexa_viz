@@ -2,6 +2,7 @@ import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import React from 'react';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import Sidenavbar from '../sidenavbar';
+import "./create.css";
 
 function Create(props) {
     return (
@@ -11,12 +12,14 @@ function Create(props) {
          <Sidenavbar />
       </Col>
             <Col>
-        <Container >
-            <Form.Label style={{fontSize:"50px", fontWeight:"100px", fontStyle:"bold"}}>CREATE</Form.Label>
-         <Card style={{padding:"15px", marginTop:"100px"}}>
-        <Form >
+        <Container className='create-card' >
            
-  
+          
+         <Card className='create-body' >
+        <Form >
+        <Form.Group className="mb-3">
+    <Form.Label style={{MarginLeft:"44%",fontSize:"50px", fontWeight:"100px", fontStyle:"bold"}}>CREATE</Form.Label>
+    </Form.Group>
   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
     <Form.Label>Document Title</Form.Label>
     <Form.Control type="text" placeholder="" />

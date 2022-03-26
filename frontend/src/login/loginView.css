@@ -5,6 +5,8 @@
     text-align: center;
     height: 100vh;
     background-color: #243b63;
+    width: 100%;
+    overflow-x:hidden;
 }
 .home-image {
     width: 110%;

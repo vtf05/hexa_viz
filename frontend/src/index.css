@@ -125,3 +125,6 @@ code {
 .bottomProfileText {
   font-family: -webkit-pictograph !important;
 }
+.side-img{
+  border-radius: 50%;
+}

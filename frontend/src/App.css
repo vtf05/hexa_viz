@@ -1,27 +1,90 @@
 .sidenavbar{
   align-items: center;
   text-align: center;
-  background-color: #673ab7;
+  background-color: #243b63;
   padding: 10px;
 }
 .btns{
-  align-self: center;
+  /* align-self: center;
   text-align: center;
   border-radius: 5px;
+  font-style: normal;
+  text-decoration: none;
+  border-style: hidden;
+  font-weight: 700!important;
+  font-size: large;
+  cursor: pointer;
   margin: 5px;
-  width: 150px;
+  width:13%!important;
+ position: fixed;
+ left: 10px;
+  bottom: 2px;
+  right: 0px;  */
+  /* background-color: #5271a8!important;
+  color: #eceef8!important; */
+  background: #eceef8 !important;
+    /* color: #243b63 !important;
+    background: #FBCA1F; */
+    width:45%!important;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+  
   
 }
 .tabs{
   cursor: pointer;
-  font-size: large;
+  font-size: large!important;
   color: #eceef8;
   font-style: normal;
   text-decoration: none;
   border-style: hidden;
-  font-weight: 500;
+  font-weight: 500!important;
+  width: 100% ;
+  height: 3rem;
+  padding-top: 12px;
+  max-width: 100%;
+  margin: 0px;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  
 }
 .tabs:hover{
   background-color: #eceef8;
-  color: #673ab7;
+  color:#243b63;
+  width: 100% ;
+  height: 3rem;
+  padding-top: 12px;
+
+  margin: 0px;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+ 
+  
+}
+.body{
+  overflow:hidden;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+}
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.search-css{
+  border: double;
+  border-radius: 7%;
 }
