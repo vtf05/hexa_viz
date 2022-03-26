@@ -1,7 +1,7 @@
 .sidenavbar{
   align-items: center;
   text-align: center;
-  background-color: rgba(1, 20, 37, 0.907);
+  background-color: #673ab7;
   padding: 10px;
 }
 .btns{
@@ -13,7 +13,15 @@
   
 }
 .tabs{
-  
-  color: white;
-  font-weight: 300;
+  cursor: pointer;
+  font-size: large;
+  color: #eceef8;
+  font-style: normal;
+  text-decoration: none;
+  border-style: hidden;
+  font-weight: 500;
+}
+.tabs:hover{
+  background-color: #eceef8;
+  color: #673ab7;
 }
