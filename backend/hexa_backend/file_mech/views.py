@@ -10,6 +10,7 @@ from rest_framework import status
 from cryptography.fernet import Fernet
 import datetime
 
+
 # Create your views here
 class CreateFileView(viewsets.ModelViewSet):
         permission_classes = (IsAuthenticated,)
@@ -39,12 +40,15 @@ class CreateFileView(viewsets.ModelViewSet):
                 encrypted = f.encrypt(original)
 
                 date = str(datetime.date.today())
-                with open ('media/efiles/enc_alkendu' + date+ '.pdf', 'wb') as encrypted_file:
+                file_name = 'media/efiles/enc_alkendu' + date+ '.pdf'
+                with open (file_name, 'wb') as encrypted_file:
                     encrypted_file.write(encrypted)
 
                 securityKey = CreateSecurityMechanism.objects.create(docId = instance,key=key)
                 print( "encryption doneeeee")
-
+                created_file = CreateFile.objects.last()
+                created_file.doc_file =  file_name
+                created_file.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 

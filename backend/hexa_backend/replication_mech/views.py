@@ -112,7 +112,9 @@ class sendDocView(viewsets.ModelViewSet):
                 department = Department.objects.get(id = data['reciever'])
                 statuss  = Status.objects.create(docId = doc , departmentId = department )
                 data['status'] = statuss.id
-                data['path'] = get_path(request.data['send_by'], request.data['reciever'])
+                srcc =  Department.objects.get(id = data['send_by']). priority
+                dest =  Department.objects.get(id = data['reciever']).priority
+                data['path'] = get_path(srcc, dest)
                 serializer = self.get_serializer(data=data)
                 serializer.is_valid(raise_exception=True)
                 self.perform_create(serializer)
