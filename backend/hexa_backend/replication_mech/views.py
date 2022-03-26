@@ -18,10 +18,10 @@ from rest_framework.decorators import action ,api_view
 
 def get_path(source,dest) :
     dic = { (1,4) :[1,2,3,4],
-    (1,3) :[1,2,3,4],
-    (2,4) :[1,2,3,4],
+    (1,3) :[1,2,3],
+    (2,4) :[2,3,4],
     }
-    path = dic[(1,4)]
+    path = dic[(source,dest)]
    
     return path
 
@@ -56,7 +56,7 @@ class StatusView(viewsets.ModelViewSet):
                     data['type_of'] = 1
                 else :
                     data['type_of'] = 4
-                    
+
             else :
                 if request.data['update'] == 'confirm' :
                     data['departmentId'] = path[ind+1]
